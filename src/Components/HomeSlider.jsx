@@ -10,6 +10,7 @@ const HomeSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
+    cssEase: 'linear',
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -86,6 +87,7 @@ const SliderText = styled.div`
       rgba(237, 196, 141, 1) 0%,
       rgba(195, 151, 100, 1) 100%
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
