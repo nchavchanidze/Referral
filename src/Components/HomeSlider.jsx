@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 
 import sliderImage_01 from "../Assets/images/slides/slide-1.jpg";
 import sliderImage_02 from "../Assets/images/slides/slide-2.jpg";
@@ -10,7 +12,7 @@ const HomeSlider = () => {
   const settings = {
     dots: false,
     infinite: true,
-    cssEase: 'linear',
+    cssEase: "linear",
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -31,7 +33,8 @@ const HomeSlider = () => {
             </SliderText>
             <SliderLink>
               <Link to="/home#about">
-                ვრცლად
+                ვრცლად &nbsp;
+                <FontAwesomeIcon icon={faLongArrowAltRight} />
               </Link>
             </SliderLink>
           </Caption>
@@ -47,7 +50,8 @@ const HomeSlider = () => {
 
             <SliderLink>
               <Link to="/home#about">
-                ვრცლად
+                ვრცლად &nbsp;
+                <FontAwesomeIcon icon={faLongArrowAltRight} />
               </Link>
             </SliderLink>
           </Caption>
@@ -123,6 +127,5 @@ const SliderLink = styled.div`
     }
   }
 `;
-
 
 export default HomeSlider;
