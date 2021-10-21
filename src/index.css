@@ -187,3 +187,9 @@ a:hover {
   line-height: unset !important;
   border-bottom: none !important;
 }
+
+
+/* Home Slick Slider */
+.slick-slide img {
+  width: 100%;
+}
