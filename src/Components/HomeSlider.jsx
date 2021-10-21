@@ -30,12 +30,12 @@ const HomeSlider = () => {
               <span>თქვენი</span> განვითარებისთვის
             </SliderText>
             <SliderLink>
-              <Link to="/home#about" class="btn1">
+              <Link to="/home#about">
                 ვრცლად
               </Link>
             </SliderLink>
           </Caption>
-          <img src={sliderImage_01} alt="" class="img" />
+          <img src={sliderImage_01} alt="" />
         </Slide>
         <Slide>
           <Caption>
@@ -46,12 +46,12 @@ const HomeSlider = () => {
             </SliderText>
 
             <SliderLink>
-              <Link to="/home#about" class="btn1">
+              <Link to="/home#about">
                 ვრცლად
               </Link>
             </SliderLink>
           </Caption>
-          <img src={sliderImage_02} alt="" class="img" />
+          <img src={sliderImage_02} alt="" />
         </Slide>
       </Slider>
     </>

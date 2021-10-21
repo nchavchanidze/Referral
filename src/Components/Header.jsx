@@ -16,7 +16,7 @@ const Header = () => {
       </LogoWrapper>
       <NavbarContainer className="navbar_ navbar navbar-expand-md clearfix">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -24,35 +24,35 @@ const Header = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <div class="hamburger" id="hamburger-6">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+          <div className="hamburger" id="hamburger-6">
+            <span className="line"></span>
+            <span className="line"></span>
+            <span className="line"></span>
           </div>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="nav navbar-nav">
             <li className="nav-item">
-              <Link to="/home" class="active nav-link">
+              <Link to="/home" className="active nav-link">
                 მთავარი
               </Link>
             </li>
             <li className="nav-item">
-              <a href="#about" class="nav-link">
+              <a href="#about" className="nav-link">
                 ჩვენს შესახებ
               </a>
             </li>
             <li className="nav-item">
-              <a href="#services" class="nav-link">
+              <a href="#services" className="nav-link">
                 სერვისები
               </a>
             </li>
             <li className="nav-item">
-              <a href="#contacts" class="nav-link">
+              <a href="#contacts" className="nav-link">
                 კონტაქტი
               </a>
             </li>
-            <li class="nav-item sub-menu">
+            <li className="nav-item sub-menu">
               <Dropdown>
                 <Dropdown.Toggle
                   id="dropdown-basic"
