@@ -1,10 +1,13 @@
 import React from 'react'
+import HomeSlider from '../Components/HomeSlider'
+import Sidepanel from '../Components/Sidepanel'
 
 const Home = () => {
     return (
-        <div>
-            Home Page
-        </div>
+        <>
+            <HomeSlider />
+            <Sidepanel />
+        </>
     )
 }
 
