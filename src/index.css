@@ -211,6 +211,14 @@ a:hover {
   border-bottom: none !important;
 }
 
+/* Header Navbar Hamburger Reset */
+.navbar-toggler {
+  color: transparent !important;
+  border: none;
+  padding: 0 !important;
+}
+
+
 
 /* Home Slick Slider */
 .slick-slide img {
