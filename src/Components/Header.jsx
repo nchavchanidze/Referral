@@ -23,10 +23,7 @@ const Header = () => {
           </Link>
         </LogoWrapper>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleBurger}>
-          <Hamburger
-            className={`hamburger ${burger ? "is-active" : ""}`}
-            id="hamburger-6"
-          >
+          <Hamburger className={`hamburger ${burger ? "is-active" : ""}`}>
             <span className="line"></span>
             <span className="line"></span>
             <span className="line"></span>
