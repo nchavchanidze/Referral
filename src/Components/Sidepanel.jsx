@@ -37,6 +37,15 @@ const SidePanel = styled.div`
   top: 0;
   z-index: 1;
   overflow: hidden;
+  @media only screen and (max-width: 1259.98px) {
+    width: 100px;
+  }
+  @media only screen and (max-width: 991.98px) {
+    width: 50px;
+  }
+  @media only screen and (max-width: 767.98px) {
+    display: none;
+  }
   &:before {
     content: "";
     display: block;
