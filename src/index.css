@@ -154,6 +154,26 @@ a:hover {
   background-color: #272727;
 }
 
+/* Header */
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar-collapse .navbar-nav {
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 15px;
+  }
+  .navbar-collapse .navbar-nav {
+    align-items: flex-start;
+  }
+}
+
 
 /* Header Language Dropdown */
 .language-dropdown {
@@ -180,8 +200,11 @@ a:hover {
 .dropdown-menu {
   min-width: unset;
   background-color: #272727;
+  border: none;
   border-bottom: 2px solid rgba(237, 196, 141, 1);
   inset: unset !important;
+  padding: 5px;
+  margin-top: 10px !important;
 }
 .dropdown-menu a {
   line-height: unset !important;

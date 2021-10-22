@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Dropdown, Container } from "react-bootstrap";
+
 import Logo from "../Assets/images/Logo.svg";
 import GeFlag from "../Assets/images/Icons/ge.png";
 import UsFlag from "../Assets/images/Icons/us.png";
@@ -9,31 +10,17 @@ import UsFlag from "../Assets/images/Icons/us.png";
 const Header = () => {
   return (
     <HeaderContainer>
-      <LogoWrapper>
-        <Link to="/home">
-          <img src={Logo} alt="" />
-        </Link>
-      </LogoWrapper>
-      <NavbarContainer className="navbar_ navbar navbar-expand-md clearfix">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <div className="hamburger" id="hamburger-6">
-            <span className="line"></span>
-            <span className="line"></span>
-            <span className="line"></span>
-          </div>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="nav navbar-nav">
+      <Navbar expand="lg" className="p-0 w-100 flex-wrap">
+        <LogoWrapper>
+          <Link to="/home">
+            <img src={Logo} alt="" />
+          </Link>
+        </LogoWrapper>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
             <li className="nav-item">
-              <Link to="/home" className="active nav-link">
+              <Link to="/home" className="nav-link">
                 მთავარი
               </Link>
             </li>
@@ -70,9 +57,9 @@ const Header = () => {
                 </Dropdown.Menu>
               </Dropdown>
             </li>
-          </ul>
-        </div>
-      </NavbarContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </HeaderContainer>
   );
 };
@@ -87,6 +74,37 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
+  @media only screen and (max-width: 991.98px) {
+    padding-right: 15px;
+    background-color: #272727;
+  }
+  .nav-item {
+    .nav-link {
+      display: block;
+      text-decoration: none;
+      font-family: "Helvetica-Roman";
+      font-weight: 400;
+      font-size: 15px;
+      text-transform: uppercase;
+      line-height: 168px;
+      padding: 0 10px;
+      margin: 0;
+      color: #fff;
+      border-bottom: 2px solid transparent;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease-out;
+      &:focus,
+      &:hover,
+      &.active {
+        color: #fff;
+        border-color: rgba(237, 196, 141, 1);
+      }
+      @media only screen and (max-width: 991.98px) {
+        line-height: unset;
+        padding: 0;
+      }
+    }
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -95,46 +113,39 @@ const LogoWrapper = styled.div`
   padding: 0 60px 0 80px;
   background-color: #272727;
   position: relative;
+  @media only screen and (max-width: 991.98px) {
+    width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media only screen and (max-width: 767.98px) {
+    height: 90px;
+    width: 250px;
+  }
+  @media only screen and (max-width: 352px) {
+    width: 214px;
+  }
+  /* @media only screen and (max-width: 767.98px) {
+    width: 270px;
+  } */
   img {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
     height: auto;
-    width: 300px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
   }
 `;
 
 const NavbarContainer = styled.nav`
   padding-top: 0;
   padding-bottom: 0;
+
   ul {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-      .nav-item {
-        a {
-          display: block;
-          text-decoration: none;
-          font-family: "Helvetica-Roman";
-          font-weight: 400;
-          font-size: 15px;
-          text-transform: uppercase;
-          line-height: 168px;
-          padding: 0 10px;
-          margin: 0;
-          color: #fff;
-          border-bottom: 2px solid transparent;
-          letter-spacing: 0.1em;
-          transition: all 0.3s ease-out;
-          &:focus,
-          &:hover,
-          &.active {
-            color: #fff;
-            border-color: rgba(237, 196, 141, 1);
-          }
-        }
-      }
   }
 `;
 
