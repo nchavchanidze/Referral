@@ -20,6 +20,7 @@ const HomeSlider = () => {
     autoplaySpeed: 5000,
     arrows: false,
     swipeToslide: false,
+    adaptiveHeight: false,
   };
   return (
     <>
@@ -64,6 +65,10 @@ const HomeSlider = () => {
 
 const Slide = styled.div`
   position: relative;
+  height: 929px;
+  img {
+    height: 100%;
+  }
 `;
 const Caption = styled.div`
   position: absolute;
@@ -78,9 +83,20 @@ const SliderText = styled.div`
   font-size: 90px;
   color: #fff;
   line-height: 1.1;
+  @media only screen and (max-width: 991.98px) {
+    font-size: 70px;
+    padding-top: 10px;
+  }
+  @media only screen and (max-width: 767.98px) {
+    font-size: 40px;
+    padding-top: 10px;
+  }
   @media only screen and (max-height: 700px) {
     font-size: 70px;
     padding-top: 10px;
+  }
+  @media only screen and (max-width: 575.98px) {
+    font-size: 30px;
   }
   span {
     color: #c5a47e;
