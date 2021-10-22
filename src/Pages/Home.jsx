@@ -14,6 +14,7 @@ const Home = () => {
 
 const HomeSection = styled.section`
     height: 929px;
+    position: relative;
 ` 
 
 export default Home
