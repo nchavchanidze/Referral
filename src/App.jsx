@@ -3,7 +3,9 @@ import Layout from "./Layout/Layout";
 import Confucius from "./Pages/Confucius";
 import Home from "./Pages/Home";
 
-function App() {
+import React from "react";
+
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -14,6 +16,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;
