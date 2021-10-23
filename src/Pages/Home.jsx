@@ -4,6 +4,7 @@ import About from '../Components/About'
 import HomeSlider from '../Components/HomeSlider'
 import Services from '../Components/Services'
 import Sidepanel from '../Components/Sidepanel'
+import Team from '../Components/Team'
 
 const Home = () => {
     return (
@@ -17,6 +18,9 @@ const Home = () => {
         </Section>
         <Section>
             <Services />
+        </Section>
+        <Section>
+            <Team />
         </Section>
         </>
 

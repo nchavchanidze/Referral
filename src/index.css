@@ -146,6 +146,11 @@ a:hover {
 }
 
 @font-face {
+  font-family: "FiraGo-Medium";
+  src: url(./Assets/Fonts/FiraGO-Medium.otf);
+}
+
+@font-face {
   font-family: "FiraGo-SemiBoldItalic";
   src: url(./Assets/Fonts/FiraGO-SemiBoldItalic.otf);
 }
