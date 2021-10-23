@@ -102,6 +102,8 @@ section {
 }
 body {
   line-height: 1;
+  background-color: #272727;
+  color: #fff;
 }
 ol,
 ul {
@@ -131,10 +133,16 @@ a:hover {
 }
 
 /* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 @font-face {
   font-family: "FiraGo-ThinItalic";
   src: url(./Assets/Fonts/FiraGO-ThinItalic.otf);
+}
+
+@font-face {
+  font-family: "FiraGo-Thin";
+  src: url(./Assets/Fonts/FiraGO-Thin.otf);
 }
 
 @font-face {
@@ -145,6 +153,22 @@ a:hover {
 @font-face {
   font-family: "Helvetica-Roman";
   src: url(./Assets/Fonts/HELVETICANEUELTGEO-55ROMAN.TTF);
+}
+
+@font-face {
+  font-family: "BPG Glaho WEB Caps";
+  src: url("./Assets/Fonts/bpg-glaho-web-caps-webfont.eot"); /* IE9 Compat Modes */
+  src: url("./Assets/Fonts/bpg-glaho-web-caps-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("./Assets/Fonts/bpg-glaho-web-caps-webfont.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("./Assets/Fonts/bpg-glaho-web-caps-webfont.woff") format("woff"),
+    /* Pretty Modern Browsers */
+      url("./Assets/Fonts/bpg-glaho-web-caps-webfont.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("./Assets/Fonts/bpg-glaho-web-caps-webfont.svg#bpg_glaho_web_capsregular")
+      format("svg"); /* Legacy iOS */
 }
 
 /* Particles */
@@ -173,7 +197,6 @@ a:hover {
     align-items: flex-start;
   }
 }
-
 
 /* Header Language Dropdown */
 .language-dropdown {
@@ -217,8 +240,6 @@ a:hover {
   border: none;
   padding: 0 !important;
 }
-
-
 
 /* Home Slick Slider */
 .slick-slide img {
