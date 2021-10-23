@@ -76,6 +76,9 @@ const Caption = styled.div`
   left: 70%;
   transform: translate(-50%, -50%);
   width: 100%;
+  @media only screen and (max-width: 767.98px) {
+    left: 55%;
+  }
 `;
 
 const SliderText = styled.div`
