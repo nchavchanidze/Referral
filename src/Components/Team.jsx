@@ -3,6 +3,13 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import Slider from "react-slick";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedinIn,
+  faGithub,
+  faDribbble,
+} from "@fortawesome/free-brands-svg-icons";
+
 import Member01 from "../Assets/images/Team/member-01.jpg";
 import Member02 from "../Assets/images/Team/member-02.jpg";
 import Member03 from "../Assets/images/Team/member-03.jpg";
@@ -17,11 +24,20 @@ const Team = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
     arrows: false,
     swipeToslide: false,
     adaptiveHeight: false,
+    responsive: [
+      {
+        breakpoint: 974,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <>
@@ -39,7 +55,15 @@ const Team = () => {
                   <p className="name">მაკო ციბაძე</p>
                   <p className="position">დამფუძნებელი</p>
                 </div>
-                <div className="member-socials">socials</div>
+                <div className="member-socials">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/in/mako-tsibadze-08b998150/"
+                  >
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                </div>
               </div>
             </div>
             <div className="team-member">
@@ -51,7 +75,18 @@ const Team = () => {
                   <p className="name">ლიკა იაშაღაშვილი</p>
                   <p className="position">გრაფიკული დიზაინერი</p>
                 </div>
-                <div className="member-socials">socials</div>
+                <div className="member-socials">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/in/lika-iashaghashvili-2080b0222/"
+                  >
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                  <a target="_blank" rel="noreferrer" href="/">
+                    <FontAwesomeIcon icon={faDribbble} />
+                  </a>
+                </div>
               </div>
             </div>
           </Slide>
@@ -65,7 +100,11 @@ const Team = () => {
                   <p className="name">ლავრი ფირცხალაიშვილი</p>
                   <p className="position">დამფუძნებელი</p>
                 </div>
-                <div className="member-socials">socials</div>
+                <div className="member-socials">
+                  <a target="_blank" rel="noreferrer" href="/">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                </div>
               </div>
             </div>
             <div className="team-member">
@@ -77,7 +116,22 @@ const Team = () => {
                   <p className="name">ნიკოლოზ ჭავჭანიძე</p>
                   <p className="position">Front End დეველოპერი</p>
                 </div>
-                <div className="member-socials">socials</div>
+                <div className="member-socials">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/in/nikoloztchavtchanidze/"
+                  >
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://github.com/nchavchanidze"
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </div>
               </div>
             </div>
           </Slide>
@@ -91,7 +145,11 @@ const Team = () => {
                   <p className="name">მიხეილ ოდიშარია</p>
                   <p className="position">ანალიტიკოსი</p>
                 </div>
-                <div className="member-socials">socials</div>
+                <div className="member-socials">
+                  <a target="_blank" rel="noreferrer" href="/">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                </div>
               </div>
             </div>
           </Slide>
@@ -143,30 +201,48 @@ const Slide = styled.div`
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    padding-right: 30px;
     .member-image {
       height: 128px;
       img {
         height: 100%;
-        width: 100%;
+        width: unset;
       }
     }
     .member-caption {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      flex-wrap: wrap;
       width: 100%;
       .member-description {
         line-height: 1.5;
-          .name {
-            font-size: 17px;
-            font-family: "FiraGo-Medium";
-            color: #c5a47e;
-          }
-          .position {
-            font-family: "FiraGo-Thin";
-            font-size: 12px;
-            color: #fff;
-          }
+        .name {
+          font-size: 17px;
+          font-family: "FiraGo-Medium";
+          color: #c5a47e;
+        }
+        .position {
+          font-family: "FiraGo-Thin";
+          font-size: 12px;
+          color: #fff;
+        }
+      }
+    }
+    .member-socials {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      a {
+        color: #fff;
+        font-size: 14px;
+        transition: all 0.3s ease-out;
+        &:hover {
+          transition: all 0.3s ease-out;
+
+          color: #c5a47e;
+        }
       }
     }
   }
