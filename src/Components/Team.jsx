@@ -43,7 +43,7 @@ const Team = () => {
     <>
       <BackText>our team</BackText>
       <Container>
-        <SectionTitle>ჩვენს შესახებ</SectionTitle>
+        <SectionTitle>ჩვენი გუნდი</SectionTitle>
         <Slider {...settings}>
           <Slide className="pr-4">
             <div className="team-member mb-4">
@@ -166,7 +166,7 @@ const BackText = styled.div`
   opacity: 0.02;
   position: absolute;
   left: 5%;
-  top: 120px;
+  top: 40px;
   white-space: nowrap;
   z-index: -1;
   @media only screen and (max-width: 767.98px) {
