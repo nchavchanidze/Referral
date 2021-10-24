@@ -125,7 +125,6 @@ const ServiceIcon = styled.div`
   margin-bottom: 30px;
   @media only screen and (max-width: 991.98px) {
     margin-top: 3rem;
-    }
   }
   img {
     height: 100%;
