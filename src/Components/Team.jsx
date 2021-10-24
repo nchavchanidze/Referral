@@ -202,6 +202,11 @@ const Slide = styled.div`
     align-items: center;
     gap: 30px;
     padding-right: 30px;
+    @media only screen and (max-width: 442px) {
+      height: 256px;
+      flex-wrap: wrap;
+    }
+
     .member-image {
       height: 128px;
       img {
