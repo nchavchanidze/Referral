@@ -156,6 +156,11 @@ a:hover {
 }
 
 @font-face {
+  font-family: "Helvetica-Thin";
+  src: url(./Assets/Fonts/HELVETICANEUELTGEO-35THIN.TTF);
+}
+
+@font-face {
   font-family: "Helvetica-Roman";
   src: url(./Assets/Fonts/HELVETICANEUELTGEO-55ROMAN.TTF);
 }
@@ -174,6 +179,16 @@ a:hover {
     /* Safari, Android, iOS */
       url("./Assets/Fonts/bpg-glaho-web-caps-webfont.svg#bpg_glaho_web_capsregular")
       format("svg"); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'BPG Nino Mtavruli';
+  src: url('./Assets/Fonts/bpg-nino-mtavruli-webfont.eot'); /* IE9 Compat Modes */
+  src: url('./Assets/Fonts/bpg-nino-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./Assets/Fonts/bpg-nino-mtavruli-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./Assets/Fonts/bpg-nino-mtavruli-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./Assets/Fonts/bpg-nino-mtavruli-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./Assets/Fonts/bpg-nino-mtavruli-webfont.svg#bpg_nino_mtavruliregular') format('svg'); /* Legacy iOS */
 }
 
 /* Particles */

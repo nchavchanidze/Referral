@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import About from '../Components/About'
+import Contact from '../Components/Contact'
 import HomeSlider from '../Components/HomeSlider'
 import Services from '../Components/Services'
 import Sidepanel from '../Components/Sidepanel'
@@ -21,6 +22,9 @@ const Home = () => {
         </Section>
         <Section>
             <Team />
+        </Section>
+        <Section>
+            <Contact />
         </Section>
         </>
 
