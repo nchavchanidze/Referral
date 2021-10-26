@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import About from '../Components/About'
 import Contact from '../Components/Contact'
 import HomeSlider from '../Components/HomeSlider'
+import Lines from '../Components/Lines'
 import Services from '../Components/Services'
 import Sidepanel from '../Components/Sidepanel'
 import Team from '../Components/Team'
@@ -10,6 +11,7 @@ import Team from '../Components/Team'
 const Home = () => {
     return (
         <>
+        <Lines />
         <HomeSection>
             <HomeSlider />
             <Sidepanel />

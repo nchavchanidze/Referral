@@ -198,6 +198,11 @@ a:hover {
   background-color: #272727;
 }
 
+/* Root */
+#root {
+  position: relative;
+}
+
 /* Header */
 
 .navbar-collapse {
