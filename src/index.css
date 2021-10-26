@@ -198,6 +198,31 @@ a:hover {
   background-color: #272727;
 }
 
+/* Scrollbar & Selection */
+::selection {
+  color: #fff !important;
+  background: #c5a47e !important;
+}
+::-moz-selection {
+  background: #c5a47e !important;
+  color: #fff;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #272727;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(195, 151, 100, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(237, 196, 141, 1);
+}
+
+
 /* Root */
 #root {
   position: relative;
