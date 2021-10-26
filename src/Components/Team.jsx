@@ -205,6 +205,8 @@ const Slide = styled.div`
     @media only screen and (max-width: 442px) {
       height: 256px;
       flex-wrap: wrap;
+      padding: 30px;
+      width: 100%;
     }
 
     .member-image {
