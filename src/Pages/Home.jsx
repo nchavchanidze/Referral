@@ -4,6 +4,7 @@ import About from '../Components/About'
 import Contact from '../Components/Contact'
 import HomeSlider from '../Components/HomeSlider'
 import Lines from '../Components/Lines'
+import Map from '../Components/Map'
 import Services from '../Components/Services'
 import Sidepanel from '../Components/Sidepanel'
 import Team from '../Components/Team'
@@ -27,6 +28,9 @@ const Home = () => {
         </Section>
         <Section>
             <Contact />
+        </Section>
+        <Section>
+            <Map />
         </Section>
         </>
 
