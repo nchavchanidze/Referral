@@ -1,49 +1,59 @@
-import React from 'react'
-import styled from 'styled-components'
-import About from '../Components/About'
-import Contact from '../Components/Contact'
-import HomeSlider from '../Components/HomeSlider'
-import Lines from '../Components/Lines'
-import Map from '../Components/Map'
-import Services from '../Components/Services'
-import Sidepanel from '../Components/Sidepanel'
-import Team from '../Components/Team'
+import React, { Suspense } from "react";
+import styled from "styled-components";
+import HomeSlider from "../Components/HomeSlider";
+import Lines from "../Components/Lines";
+import Sidepanel from "../Components/Sidepanel";
+
+const About = React.lazy(() => import("../Components/About"));
+const Services = React.lazy(() => import("../Components/Services"));
+const Team = React.lazy(() => import("../Components/Team"));
+const Contact = React.lazy(() => import("../Components/Contact"));
+const Map = React.lazy(() => import("../Components/Map"));
 
 const Home = () => {
-    return (
-        <>
-        <Lines />
-        <HomeSection>
-            <HomeSlider />
-            <Sidepanel />
-        </HomeSection>
+  return (
+    <>
+      <Lines />
+      <HomeSection>
+        <HomeSlider />
+        <Sidepanel />
+      </HomeSection>
+      <Suspense>
         <Section id="about">
-            <About />
+          <About />
         </Section>
+      </Suspense>
+      <Suspense>
         <Section id="services">
-            <Services />
+          <Services />
         </Section>
+      </Suspense>
+      <Suspense>
         <Section>
-            <Team />
+          <Team />
         </Section>
+      </Suspense>
+      <Suspense>
         <Section id="contact">
-            <Contact />
+          <Contact />
         </Section>
+      </Suspense>
+      <Suspense>
         <Section>
-            <Map />
+          <Map />
         </Section>
-        </>
-
-    )
-}
+      </Suspense>
+    </>
+  );
+};
 
 const HomeSection = styled.section`
-    height: 929px;
-    position: relative;
-` 
+  height: 929px;
+  position: relative;
+`;
 const Section = styled.section`
-    position: relative;
-    padding: 70px 0;
-`
+  position: relative;
+  padding: 70px 0;
+`;
 
-export default Home
+export default Home;
