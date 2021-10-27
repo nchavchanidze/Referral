@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <Lines />
-      <HomeSection>
+      <HomeSection id="home">
         <HomeSlider />
         <Sidepanel />
       </HomeSection>
