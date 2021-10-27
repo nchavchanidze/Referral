@@ -5,6 +5,7 @@ import Layout from "./Layout/Layout";
 import Confucius from "./Pages/Confucius";
 
 import ComponentLayout from "./Layout/ComponentLayout";
+import Loader from "./Components/Loader";
 const Home = React.lazy(() => import("./Pages/Home"));
 const About = React.lazy(() => import("./Components/About"));
 const Services = React.lazy(() => import("./Components/Services"));
@@ -13,21 +14,7 @@ const Contact = React.lazy(() => import("./Components/Contact"));
 const App = () => {
   return (
     <Router>
-      <Suspense
-        fallback={
-          <div
-            style={{
-              height: "100vh",
-              width: "100vw",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <h1 style={{ fontSize: 100 }}>Loading Home</h1>
-          </div>
-        }
-      >
+      <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path="/" component={Confucius} />
           <Route
