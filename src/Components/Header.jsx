@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
@@ -13,6 +13,13 @@ const Header = () => {
   const handleBurger = () => {
     setBurger(!burger);
   };
+
+  useEffect(() => {
+    let url = window.location.href.split("/");
+    let target = url[url.length - 1].toLocaleLowerCase();
+    let element = document.getElementById(target);
+    element && element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   return (
     <HeaderContainer>
@@ -37,17 +44,50 @@ const Header = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="#about" className="nav-link">
+              <a
+                href="/"
+                onClick={(e) => {
+                  let about = document.getElementById("about");
+                  e.preventDefault();
+                  about &&
+                    about.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  window.history.pushState("about", "about", "/about");
+                }}
+                className="nav-link"
+              >
                 ჩვენს შესახებ
               </a>
             </li>
             <li className="nav-item">
-              <a href="#services" className="nav-link">
+              <a href="/"
+                onClick={(e) => {
+                  let services = document.getElementById("services");
+                  e.preventDefault();
+                  services &&
+                    services.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  window.history.pushState("services", "services", "/services");
+                }} className="nav-link">
                 სერვისები
               </a>
             </li>
             <li className="nav-item">
-              <a href="#contacts" className="nav-link">
+              <a href="/"
+                onClick={(e) => {
+                  let contact = document.getElementById("contact");
+                  e.preventDefault();
+                  contact &&
+                    contact.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  window.history.pushState("contact", "contact", "/contact");
+                }} className="nav-link">
                 კონტაქტი
               </a>
             </li>

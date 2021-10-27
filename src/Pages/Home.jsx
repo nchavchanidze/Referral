@@ -17,16 +17,16 @@ const Home = () => {
             <HomeSlider />
             <Sidepanel />
         </HomeSection>
-        <Section>
+        <Section id="about">
             <About />
         </Section>
-        <Section>
+        <Section id="services">
             <Services />
         </Section>
         <Section>
             <Team />
         </Section>
-        <Section>
+        <Section id="contact">
             <Contact />
         </Section>
         <Section>
