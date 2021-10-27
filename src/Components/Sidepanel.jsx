@@ -7,7 +7,6 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons"
 const Sidepanel = () => {
   return (
     <SidePanel>
-      <h1>Hello</h1>
       <SocialLeft>
         <li>
           <a target="_blank" rel="noreferrer" href="tel:+995595212510">
