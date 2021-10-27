@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -6,6 +6,12 @@ import { Container } from "react-bootstrap";
 import Logo from "../Assets/images/Logo.svg";
 
 const Footer = () => {
+  useEffect(() => {
+    let url = window.location.href.split("/");
+    let target = url[url.length - 1].toLocaleLowerCase();
+    let element = document.getElementById(target);
+    element && element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
   return (
     <footer>
       <FooterLogoWrapper>
@@ -27,16 +33,72 @@ const Footer = () => {
             <FooterNavigation>
               <ul>
                 <li>
-                  <Link to="/home">მთავარი</Link>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      let home = document.getElementById("home");
+                      e.preventDefault();
+                      home &&
+                        home.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      window.history.pushState("home", "home", "/home");
+                    }}
+                  >
+                    მთავარი
+                  </a>
                 </li>
                 <li>
-                  <Link to="/home">ჩვენს შესახებ</Link>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      let about = document.getElementById("about");
+                      e.preventDefault();
+                      about &&
+                        about.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      window.history.pushState("about", "about", "/about");
+                    }}
+                  >
+                    ჩვენს შესახებ
+                  </a>
                 </li>
                 <li>
-                  <Link to="/home">სერვისები</Link>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      let services = document.getElementById("services");
+                      e.preventDefault();
+                      services &&
+                        services.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      window.history.pushState("services", "services", "/services");
+                    }}
+                  >
+                    სერვისები
+                  </a>
                 </li>
                 <li>
-                  <Link to="/home">კონტაქტი</Link>
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      let contact = document.getElementById("contact");
+                      e.preventDefault();
+                      contact &&
+                        contact.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      window.history.pushState("contact", "contact", "/contact");
+                    }}
+                  >
+                    კონტაქტი
+                  </a>
                 </li>
               </ul>
             </FooterNavigation>
@@ -73,8 +135,8 @@ const FooterContent = styled.div`
   align-items: center;
   flex-wrap: wrap;
   @media only screen and (max-width: 991.98px) {
-      justify-content: center;
-      flex-direction: column-reverse;
+    justify-content: center;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -83,11 +145,11 @@ const Copyright = styled.div`
   font-family: "Helvetica-Roman";
   color: #6b6b6b;
   @media only screen and (max-width: 991.98px) {
-      padding-top: 20px;
+    padding-top: 20px;
   }
   @media only screen and (max-width: 400.98px) {
-      text-align: center;
-      line-height: 1.5;
+    text-align: center;
+    line-height: 1.5;
   }
   a {
     color: #c5a47e;
@@ -106,7 +168,7 @@ const FooterNavigation = styled.div`
     flex-wrap: wrap;
     @media only screen and (max-width: 400.98px) {
       justify-content: center;
-  }
+    }
     li {
       a {
         font-size: 14px;
