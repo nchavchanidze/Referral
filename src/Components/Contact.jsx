@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import ContactSocial from "./ContactSocial";
 
 const Contact = () => {
   return (
@@ -22,6 +23,7 @@ const Contact = () => {
                 info@referralconsulting.ge
               </a>
             </ContactText>
+            <ContactSocial />
           </Col>
           <Col md={8}>
             <ContactForm>
