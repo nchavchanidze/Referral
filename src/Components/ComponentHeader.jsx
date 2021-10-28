@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 
+import ogImage from "../Assets/images/referral.png";
 import Logo from "../Assets/images/Logo.svg";
 import GeFlag from "../Assets/images/Icons/ge.png";
 import UsFlag from "../Assets/images/Icons/us.png";
@@ -38,6 +39,32 @@ const ComponentHeader = () => {
     <>
       <Helmet>
         <title>REFERRAL - {helmetTitle}</title>
+        <meta name="title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta name="author" content="Nikoloz Tchavtchanidze" />
+        <meta
+          name="description"
+          content="„რეფერალი“ წარმოადგენს მარკეტინგულ კომპანიას, რომელიც დაკომპლექტებულია სხვადასხვა სფეროს წარმომადგენლებით."
+        />
+        <meta
+          name="keywords"
+          content="Marketing, Social Media, Content Crafting, Business Consultation, Branding, Photo-video Shooting, Website"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://referralconsulting.ge/" />
+        <meta property="og:title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta
+          property="og:description"
+          content="„რეფერალი“ წარმოადგენს მარკეტინგულ კომპანიას, რომელიც დაკომპლექტებულია სხვადასხვა სფეროს წარმომადგენლებით."
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://referralconsulting.ge/" />
+        <meta property="twitter:title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta
+          property="twitter:description"
+          content="„რეფერალი“ წარმოადგენს მარკეტინგულ კომპანიას, რომელიც დაკომპლექტებულია სხვადასხვა სფეროს წარმომადგენლებით."
+        />
+        <meta property="twitter:image" content={ogImage} />
       </Helmet>
       <HeaderContainer>
         <Navbar expand="lg" className="p-0 w-100 flex-wrap">
