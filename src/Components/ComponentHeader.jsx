@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 
 import Logo from "../Assets/images/Logo.svg";
@@ -9,10 +9,21 @@ import UsFlag from "../Assets/images/Icons/us.png";
 
 const ComponentHeader = () => {
   const [burger, setBurger] = useState(false);
+  const [locationState, setLocationState] = useState("");
+
+  const location = useLocation();
 
   const handleBurger = () => {
     setBurger(!burger);
   };
+
+  useEffect(() => {
+    setLocationState(
+      location.pathname
+        .split(location.pathname)
+        .concat("/en" + location.pathname)
+    );
+  }, [location]);
 
   return (
     <HeaderContainer>
@@ -61,7 +72,7 @@ const ComponentHeader = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Link to="/">
+                  <Link to={locationState[2]}>
                     <div className="language-option">
                       <Flag src={UsFlag} alt="US" />
                     </div>
