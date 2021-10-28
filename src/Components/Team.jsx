@@ -114,7 +114,7 @@ const Team = () => {
               <div className="member-caption">
                 <div className="member-description">
                   <p className="name">ნიკოლოზ ჭავჭანიძე</p>
-                  <p className="position">Front End დეველოპერი</p>
+                  <p className="position">Web დეველოპერი</p>
                 </div>
                 <div className="member-socials">
                   <a
