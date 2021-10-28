@@ -101,7 +101,7 @@ const Header = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Link to="/">
+                  <Link to="/en/home">
                     <div className="language-option">
                       <Flag src={UsFlag} alt="US" />
                     </div>
