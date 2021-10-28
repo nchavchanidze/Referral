@@ -77,6 +77,9 @@ const AboutText = styled.p`
   font-size: 18px;
   color: #fff;
   line-height: 1.5;
+  @media only screen and (max-width: 767.98px) {
+    text-align: center;
+  }
 `;
 
 const AboutImage = styled.div`
