@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
@@ -10,6 +11,7 @@ import UsFlag from "../Assets/images/Icons/us.png";
 const ComponentHeader = () => {
   const [burger, setBurger] = useState(false);
   const [locationState, setLocationState] = useState("");
+  const [helmetTitle, setHelmetTitle] = useState("");
 
   const location = useLocation();
 
@@ -23,67 +25,82 @@ const ComponentHeader = () => {
         .split(location.pathname)
         .concat("/en" + location.pathname)
     );
+    if (location.pathname === "/about") {
+      setHelmetTitle("ჩვენს შესახებ");
+    } else if (location.pathname === "/services") {
+      setHelmetTitle("ჩვენი სერვისები");
+    } else if (location.pathname === "/contact") {
+      setHelmetTitle("კონტაქტი");
+    }
   }, [location]);
 
   return (
-    <HeaderContainer>
-      <Navbar expand="lg" className="p-0 w-100 flex-wrap">
-        <LogoWrapper>
-          <Link to="/home">
-            <img src={Logo} alt="" />
-          </Link>
-        </LogoWrapper>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleBurger}>
-          <Hamburger className={`hamburger ${burger ? "is-active" : ""}`}>
-            <span className="line"></span>
-            <span className="line"></span>
-            <span className="line"></span>
-          </Hamburger>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            <li className="nav-item">
-              <Link to="/home" className="nav-link">
-                მთავარი
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link">
-                ჩვენს შესახებ
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/services" onClick={(e) => {}} className="nav-link">
-                სერვისები
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/contact" className="nav-link">
-                კონტაქტი
-              </Link>
-            </li>
-            <li className="nav-item sub-menu">
-              <Dropdown>
-                <Dropdown.Toggle
-                  id="dropdown-basic"
-                  className="language-dropdown"
-                >
-                  <Flag src={GeFlag} alt="GE" />
-                </Dropdown.Toggle>
+    <>
+      <Helmet>
+        <title>REFERRAL - {helmetTitle}</title>
+      </Helmet>
+      <HeaderContainer>
+        <Navbar expand="lg" className="p-0 w-100 flex-wrap">
+          <LogoWrapper>
+            <Link to="/home">
+              <img src={Logo} alt="" />
+            </Link>
+          </LogoWrapper>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={handleBurger}
+          >
+            <Hamburger className={`hamburger ${burger ? "is-active" : ""}`}>
+              <span className="line"></span>
+              <span className="line"></span>
+              <span className="line"></span>
+            </Hamburger>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              <li className="nav-item">
+                <Link to="/home" className="nav-link">
+                  მთავარი
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/about" className="nav-link">
+                  ჩვენს შესახებ
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/services" onClick={(e) => {}} className="nav-link">
+                  სერვისები
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link">
+                  კონტაქტი
+                </Link>
+              </li>
+              <li className="nav-item sub-menu">
+                <Dropdown>
+                  <Dropdown.Toggle
+                    id="dropdown-basic"
+                    className="language-dropdown"
+                  >
+                    <Flag src={GeFlag} alt="GE" />
+                  </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Link to={locationState[2]}>
-                    <div className="language-option">
-                      <Flag src={UsFlag} alt="US" />
-                    </div>
-                  </Link>
-                </Dropdown.Menu>
-              </Dropdown>
-            </li>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </HeaderContainer>
+                  <Dropdown.Menu>
+                    <Link to={locationState[2]}>
+                      <div className="language-option">
+                        <Flag src={UsFlag} alt="US" />
+                      </div>
+                    </Link>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </HeaderContainer>
+    </>
   );
 };
 
