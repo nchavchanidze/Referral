@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 
+import ogImage from "../../Assets/images/referral.png";
 import Logo from "../../Assets/images/Logo.svg";
 import GeFlag from "../../Assets/images/Icons/ge.png";
 import UsFlag from "../../Assets/images/Icons/us.png";
@@ -10,6 +12,7 @@ import UsFlag from "../../Assets/images/Icons/us.png";
 const ComponentHeader = () => {
   const [burger, setBurger] = useState(false);
   const [locationState, setLocationState] = useState("");
+  const [helmetTitle, setHelmetTitle] = useState("");
 
   const location = useLocation();
 
@@ -19,9 +22,46 @@ const ComponentHeader = () => {
 
   useEffect(() => {
     setLocationState(location.pathname.split("/en"));
+    if (location.pathname === "/en/about") {
+      setHelmetTitle("About us");
+    } else if (location.pathname === "/en/services") {
+      setHelmetTitle("Services");
+    } else if (location.pathname === "/en/contact") {
+      setHelmetTitle("Contact");
+    }
   }, [location]);
 
   return (
+    <>
+    <Helmet>
+        <title>REFERRAL - {helmetTitle}</title>
+        <meta name="title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta name="author" content="Nikoloz Tchavtchanidze" />
+        <meta
+          name="description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta
+          name="keywords"
+          content="Marketing, Social Media, Content Crafting, Business Consultation, Branding, Photo-video Shooting, Website"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://referralconsulting.ge/" />
+        <meta property="og:title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta
+          property="og:description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://referralconsulting.ge/" />
+        <meta property="twitter:title" content={`REFERRAL - ${helmetTitle}`} />
+        <meta
+          property="twitter:description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta property="twitter:image" content={ogImage} />
+      </Helmet>
     <HeaderContainer>
       <Navbar expand="lg" className="p-0 w-100 flex-wrap">
         <LogoWrapper>
@@ -80,6 +120,7 @@ const ComponentHeader = () => {
         </Navbar.Collapse>
       </Navbar>
     </HeaderContainer>
+    </>
   );
 };
 
