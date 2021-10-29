@@ -182,6 +182,16 @@ a:hover {
 }
 
 @font-face {
+  font-family: 'BPG Glaho WEB';
+  src: url('./Assets/Fonts/bpg-glaho-web-webfont.eot'); /* IE9 Compat Modes */
+  src: url('./Assets/Fonts/bpg-glaho-web-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./Assets/Fonts/bpg-glaho-web-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./Assets/Fonts/bpg-glaho-web-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./Assets/Fonts/bpg-glaho-web-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./Assets/Fonts/bpg-glaho-web-webfont.svg#bpg_glaho_webregular') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
   font-family: 'BPG Nino Mtavruli';
   src: url('./Assets/Fonts/bpg-nino-mtavruli-webfont.eot'); /* IE9 Compat Modes */
   src: url('./Assets/Fonts/bpg-nino-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
