@@ -1,8 +1,14 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowAltRight, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLongArrowAltRight,
+  faLongArrowAltLeft,
+} from "@fortawesome/free-solid-svg-icons";
+
+import ogImage from "../Assets/images/referral.png";
 
 const NotFound = () => {
   const history = useHistory();
@@ -10,24 +16,34 @@ const NotFound = () => {
     history.goBack();
   };
   return (
-    <ErrorWrapper>
-      <Error404>404</Error404>
-      <NootFound>Not Found</NootFound>
-      <BackButton onClick={goBack}>
-        <FontAwesomeIcon icon={faLongArrowAltLeft} /> &nbsp; Go Back
-      </BackButton>
-      <SliderLink>
-        <Link to="/home">
-          Go Home &nbsp;
-          <FontAwesomeIcon icon={faLongArrowAltRight} />
-        </Link>
-      </SliderLink>
-    </ErrorWrapper>
+    <>
+      <Helmet>
+        <title>REFERRAL - Page Not Found</title>
+        <meta name="title" content="REFERRAL - Page Not Found" />
+        <meta property="og:title" content="REFERRAL - Page Not Found" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="twitter:title" content="REFERRAL - Page Not Found" />
+        <meta property="twitter:image" content={ogImage} />
+      </Helmet>
+      <ErrorWrapper>
+        <Error404>404</Error404>
+        <NootFound>Not Found</NootFound>
+        <BackButton onClick={goBack}>
+          <FontAwesomeIcon icon={faLongArrowAltLeft} /> &nbsp; Go Back
+        </BackButton>
+        <SliderLink>
+          <Link to="/home">
+            Go Home &nbsp;
+            <FontAwesomeIcon icon={faLongArrowAltRight} />
+          </Link>
+        </SliderLink>
+      </ErrorWrapper>
+    </>
   );
 };
 
 const SliderLink = styled.div`
-margin-top: 40px;
+  margin-top: 40px;
   @media only screen and (max-height: 700px) {
     margin-top: 20px;
   }
