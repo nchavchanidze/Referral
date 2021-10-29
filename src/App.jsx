@@ -10,6 +10,7 @@ import Loader from "./Components/Loader";
 
 // EN
 import LayoutEn from "./Layout/En/Layout";
+import NotFound from "./Pages/NotFound";
 
 const Home = React.lazy(() => import("./Pages/Home"));
 const About = React.lazy(() => import("./Components/About"));
@@ -144,6 +145,13 @@ const App = () => {
               </ComponentLayoutEn>
             )}
           />
+          <Route path='*' render={() => (
+              <ComponentLayout>
+                <Section>
+                  <NotFound />
+                </Section>
+              </ComponentLayout>
+            )} />
         </Switch>
       </Suspense>
     </Router>
