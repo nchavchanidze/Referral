@@ -1,11 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 import { Container, Row, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import ContactSocial from "../ContactSocial";
 
 const Contact = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_8y01hgk",
+        "template_9gvbmd8",
+        e.target,
+        "user_8VSbP4c2OYGUecywyarmY"
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Message sent Successfully");
+        } else {
+          alert("Message sent Unsuccessfully");
+        }
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <>
       <BackText>contacts</BackText>
@@ -26,23 +44,25 @@ const Contact = () => {
             <ContactSocial />
           </Col>
           <Col md={8}>
-            <ContactForm>
+            <ContactForm onSubmit={sendEmail}>
               <div className="name-email">
                 <div className="input-form">
-                  <input type="text" placeholder="Name" />
+                  <input type="text" name="name" placeholder="Name" />
                 </div>
                 <div className="input-form">
-                  <input type="email" placeholder="E-Mail" />
+                  <input type="email" name="user_email" placeholder="E-Mail" />
                 </div>
               </div>
               <div className="message-submit">
                 <div className="input-form">
-                  <textarea rows="5" placeholder="Message" />
+                  <textarea rows="5" name="message" placeholder="Message" />
                 </div>
-                <button className="submit-btn">
-                  Send &nbsp;
-                  <FontAwesomeIcon icon={faLongArrowAltRight} />
-                </button>
+                <input
+                  className="submit-btn"
+                  type="submit"
+                  value="SEND"
+                  onSubmit={sendEmail}
+                />
               </div>
             </ContactForm>
           </Col>
@@ -120,6 +140,7 @@ const ContactForm = styled.form`
       input {
         padding: 17px 12px;
         font-size: 14px;
+        font-family: sans-serif;
         line-height: 20px;
         color: #fff;
         background: #323232;
@@ -153,6 +174,7 @@ const ContactForm = styled.form`
         height: 126px;
         padding: 17px 12px;
         font-size: 14px;
+        font-family: sans-serif;
         line-height: 20px;
         color: #fff;
         background: #323232;

@@ -1,11 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 import { Container, Row, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import ContactSocial from "./ContactSocial";
 
 const Contact = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_8y01hgk",
+        "template_9gvbmd8",
+        e.target,
+        "user_8VSbP4c2OYGUecywyarmY"
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          alert("შეტყობინება გაიგზავნა წარმატებით");
+        } else {
+          alert("შეტყობინება ვერ გაიგზავნა წარმატებით");
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <>
       <BackText>contacts</BackText>
@@ -26,23 +45,29 @@ const Contact = () => {
             <ContactSocial />
           </Col>
           <Col md={8}>
-            <ContactForm>
+            <ContactForm onSubmit={sendEmail}>
               <div className="name-email">
                 <div className="input-form">
-                  <input type="text" placeholder="სახელი" />
+                  <input type="text" name="name" placeholder="სახელი" />
                 </div>
                 <div className="input-form">
-                  <input type="email" placeholder="ელ.ფოსტა" />
+                  <input
+                    type="email"
+                    name="user_email"
+                    placeholder="ელ.ფოსტა"
+                  />
                 </div>
               </div>
               <div className="message-submit">
                 <div className="input-form">
-                  <textarea rows="5" placeholder="მესიჯი" />
+                  <textarea name="message" rows="5" placeholder="მესიჯი" />
                 </div>
-                <button className="submit-btn">
-                  გაგზავნა &nbsp;
-                  <FontAwesomeIcon icon={faLongArrowAltRight} />
-                </button>
+                <input
+                  className="submit-btn"
+                  type="submit"
+                  value="გაგზავნა"
+                  onSubmit={sendEmail}
+                />
               </div>
             </ContactForm>
           </Col>
@@ -120,6 +145,7 @@ const ContactForm = styled.form`
       input {
         padding: 17px 12px;
         font-size: 14px;
+        font-family: sans-serif;
         line-height: 20px;
         color: #fff;
         background: #323232;
@@ -153,6 +179,7 @@ const ContactForm = styled.form`
         height: 126px;
         padding: 17px 12px;
         font-size: 14px;
+        font-family: sans-serif;
         line-height: 20px;
         color: #fff;
         background: #323232;
