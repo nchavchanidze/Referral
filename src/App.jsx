@@ -15,12 +15,14 @@ const Home = React.lazy(() => import("./Pages/Home"));
 const About = React.lazy(() => import("./Components/About"));
 const Services = React.lazy(() => import("./Components/Services"));
 const Contact = React.lazy(() => import("./Components/Contact"));
+const Partners = React.lazy(() => import("./Pages/Partners"));
 
 // EN
 const HomeEn = React.lazy(() => import("./Pages/En/Home"));
 const AboutEn = React.lazy(() => import("./Components/En/About"));
 const ServicesEn = React.lazy(() => import("./Components/En/Services"));
 const ContactEn = React.lazy(() => import("./Components/En/Contact"));
+const PartnersEn = React.lazy(() => import("./Pages/En/Partners"));
 
 const App = () => {
   return (
@@ -114,6 +116,30 @@ const App = () => {
               <ComponentLayoutEn>
                 <Section>
                   <ContactEn />
+                </Section>
+              </ComponentLayoutEn>
+            )}
+          />
+
+          <Route
+            exact
+            path="/partners"
+            render={() => (
+              <ComponentLayout>
+                <Section>
+                  <Partners />
+                </Section>
+              </ComponentLayout>
+            )}
+          />
+
+          <Route
+            exact
+            path="/en/partners"
+            render={() => (
+              <ComponentLayoutEn>
+                <Section>
+                  <PartnersEn />
                 </Section>
               </ComponentLayoutEn>
             )}
