@@ -1,135 +1,172 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Particles from "react-particles-js";
+import ogImage from "../Assets/images/referral.png";
+
 const Confucius = () => {
   return (
-    <Link to="/home">
-      <ParticlesContainer>
-        <Quote>
-          <WordCaps>"T</WordCaps>he man who moves a
-          <MainWord className="word-1"> mountain</MainWord> <br />
-          &nbsp;<WordCaps className="caps-2">b</WordCaps>egins by carrying away
-          small
-          <MainWord className="word-2"> stones</MainWord>
-          <WordCaps>"</WordCaps>
-        </Quote>
+    <>
+      <Helmet>
+        <title>REFERRAL - Strategy for growth</title>
+        <meta name="title" content="REFERRAL - Strategy for growth" />
+        <meta name="author" content="Nikoloz Tchavtchanidze" />
+        <meta
+          name="description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta
+          name="keywords"
+          content="Marketing, Social Media, Content Crafting, Business Consultation, Branding, Photo-video Shooting, Website"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://referralconsulting.ge/" />
+        <meta property="og:title" content="REFERRAL - Strategy for growth" />
+        <meta
+          property="og:description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://referralconsulting.ge/" />
+        <meta
+          property="twitter:title"
+          content="REFERRAL - Strategy for growth"
+        />
+        <meta
+          property="twitter:description"
+          content='"Referral" is a marketing company, which is a team of professionals made up of representatives from various fields.'
+        />
+        <meta property="twitter:image" content={ogImage} />
+      </Helmet>
+      <Link to="/home">
+        <ParticlesContainer>
+          <Quote>
+            <WordCaps>"T</WordCaps>he man who moves a
+            <MainWord className="word-1"> mountain</MainWord> <br />
+            &nbsp;<WordCaps className="caps-2">b</WordCaps>egins by carrying
+            away small
+            <MainWord className="word-2"> stones</MainWord>
+            <WordCaps>"</WordCaps>
+          </Quote>
 
-        <p>- confucius</p>
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 80,
-                density: {
-                  enable: true,
-                  value_area: 800,
-                },
-              },
-              color: {
-                value: "#c5a47e",
-              },
-              shape: {
-                type: "circle",
-                stroke: {
-                  width: 0,
-                  color: "#000000",
-                },
-                polygon: {
-                  nb_sides: 5,
-                },
-                image: {
-                  src: "img/github.svg",
-                  width: 100,
-                  height: 100,
-                },
-              },
-              opacity: {
-                value: 0.5,
-                random: false,
-                anim: {
-                  enable: false,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              size: {
-                value: 3,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false,
-                },
-              },
-              line_linked: {
-                enable: true,
-                distance: 192.40944730386272,
-                color: "#c5a47e",
-                opacity: 0.5,
-                width: 0.6,
-              },
-              move: {
-                enable: true,
-                speed: 1.5,
-                direction: "none",
-                random: false,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200,
-                },
-              },
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: {
-                  enable: false,
-                  mode: "grab",
-                },
-                onclick: {
-                  enable: true,
-                  mode: "push",
-                },
-                resize: true,
-              },
-              modes: {
-                grab: {
-                  distance: 400,
-                  line_linked: {
-                    opacity: 1,
+          <p>- confucius</p>
+          <Particles
+            params={{
+              particles: {
+                number: {
+                  value: 80,
+                  density: {
+                    enable: true,
+                    value_area: 800,
                   },
                 },
-                bubble: {
-                  distance: 400,
-                  size: 40,
-                  duration: 2,
-                  opacity: 8,
-                  speed: 3,
+                color: {
+                  value: "#c5a47e",
                 },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
+                shape: {
+                  type: "circle",
+                  stroke: {
+                    width: 0,
+                    color: "#000000",
+                  },
+                  polygon: {
+                    nb_sides: 5,
+                  },
+                  image: {
+                    src: "img/github.svg",
+                    width: 100,
+                    height: 100,
+                  },
                 },
-                push: {
-                  particles_nb: 4,
+                opacity: {
+                  value: 0.5,
+                  random: false,
+                  anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false,
+                  },
                 },
-                remove: {
-                  particles_nb: 2,
+                size: {
+                  value: 3,
+                  random: true,
+                  anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false,
+                  },
+                },
+                line_linked: {
+                  enable: true,
+                  distance: 192.40944730386272,
+                  color: "#c5a47e",
+                  opacity: 0.5,
+                  width: 0.6,
+                },
+                move: {
+                  enable: true,
+                  speed: 1.5,
+                  direction: "none",
+                  random: false,
+                  straight: false,
+                  out_mode: "out",
+                  bounce: false,
+                  attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200,
+                  },
                 },
               },
-            },
-            retina_detect: true,
-          }}
-        />
-      </ParticlesContainer>
-    </Link>
+              interactivity: {
+                detect_on: "canvas",
+                events: {
+                  onhover: {
+                    enable: false,
+                    mode: "grab",
+                  },
+                  onclick: {
+                    enable: true,
+                    mode: "push",
+                  },
+                  resize: true,
+                },
+                modes: {
+                  grab: {
+                    distance: 400,
+                    line_linked: {
+                      opacity: 1,
+                    },
+                  },
+                  bubble: {
+                    distance: 400,
+                    size: 40,
+                    duration: 2,
+                    opacity: 8,
+                    speed: 3,
+                  },
+                  repulse: {
+                    distance: 200,
+                    duration: 0.4,
+                  },
+                  push: {
+                    particles_nb: 4,
+                  },
+                  remove: {
+                    particles_nb: 2,
+                  },
+                },
+              },
+              retina_detect: true,
+            }}
+          />
+        </ParticlesContainer>
+      </Link>
+    </>
   );
 };
 
