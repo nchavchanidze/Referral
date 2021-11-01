@@ -10,10 +10,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_8y01hgk",
-        "template_9gvbmd8",
+        "service_ed8dvg5",
+        "template_6iatu5g",
         e.target,
-        "user_8VSbP4c2OYGUecywyarmY"
+        "user_6XzeyMsmJWpQlQi5rqhC3"
       )
       .then((res) => {
         if (res.status === 200) {
