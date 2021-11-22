@@ -1,6 +1,15 @@
-import React, { Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useEffect, Suspense } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import styled from "styled-components";
+import ReactPixel from 'react-facebook-pixel';
+
+
+// Layout 
 import Layout from "./Layout/Layout";
 import Confucius from "./Pages/Confucius";
 
@@ -26,6 +35,20 @@ const ContactEn = React.lazy(() => import("./Components/En/Contact"));
 const PartnersEn = React.lazy(() => import("./Pages/En/Partners"));
 
 const App = () => {
+  const options = {
+    autoConfig: true,
+    debug: false,
+  };
+
+  ReactPixel.init('498182471240214', options) // facebookPixelId
+
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("Location changed");
+        ReactPixel.pageView()
+  }, [location]);
+
   return (
     <Router>
       <Suspense fallback={<Loader />}>
@@ -145,13 +168,16 @@ const App = () => {
               </ComponentLayoutEn>
             )}
           />
-          <Route path='*' render={() => (
+          <Route
+            path="*"
+            render={() => (
               <ComponentLayout>
                 <Section>
                   <NotFound />
                 </Section>
               </ComponentLayout>
-            )} />
+            )}
+          />
         </Switch>
       </Suspense>
     </Router>
